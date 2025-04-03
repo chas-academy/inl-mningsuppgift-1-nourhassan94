@@ -24,25 +24,30 @@ const contactBook = {
     },
   ],
 };
+
+// Ange en grupp
+let groupToShow = "arbete";
+
+function showContacts(contactBook, groupToShow) {
+  let result = "";
   
-  // Ange en grupp
-  let groupToShow;
+  // Loopar igenom alla kontakter
+  for (let contact of contactBook.contacts) {
+    // Kollar om kontakten tillhör den valda gruppen
+    if (contact.group === groupToShow) {
+      result += `${contact.name}: ${contact.phone}\n`;
+    }
+  }
   
+  // Om inga kontakter hittades, returnera meddelandet
+  if (result === "") {
+    return "Inga kontakter i denna grupp.";
+  }
 
-
-
-function showContacts(contactBook, groupToShow) { // Rör ej denna kod
-
-
-
-    // Loopar igenom alla kontakter och jämför grupp
-   
-    return  // här ska sträng med namn och tekefonnummer visas i form av string interpolation
-
-
+  return result.trim();
 }
 
-
 // Rör ej denna kod
-showContacts(contactBook, groupToShow);
+console.log(showContacts(contactBook, groupToShow));
+
 module.exports = { showContacts };
