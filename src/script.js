@@ -26,26 +26,24 @@ const contactBook = {
 };
 
 // Ange en grupp
-let groupToShow = "arbete";
+let groupToShow = "familj";
 
 function showContacts(contactBook, groupToShow) {
-  let result = "";
-  
-  // Loopar igenom alla kontakter
-  for (let contact of contactBook.contacts) {
-    // Kollar om kontakten tillhör den valda gruppen
-    if (contact.group === groupToShow) {
-      result += `${contact.name}: ${contact.phone}\n`;
-    }
-  }
-  
-  // Om inga kontakter hittades, returnera meddelandet
-  if (result === "") {
-    return "Inga kontakter i denna grupp.";
-  }
+  // Rör ej denna kod
 
-  return result.trim();
+
+  for (contact of contactBook.contacts){
+    if (contact.group === groupToShow) {
+ return; `Namn: ${contact.name}, Telefon: ${contact.phone}`;
+    
+ // här ska en sträng med namn och telefonnummer visas i form av string interpolation
+   }
+   
+  }
 }
+  
+  
+ 
 
 // Rör ej denna kod
 console.log(showContacts(contactBook, groupToShow));
